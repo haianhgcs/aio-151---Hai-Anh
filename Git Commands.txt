@@ -1,0 +1,44 @@
+Check changes
+>git status
+
+Pull for the latest changes
+>git pull origin develop
+
+Add new files in current folder
+>git add .
+
+Commit to local git
+>git commit -m "feature/demo - Add git commands - Add sample python code"
+
+Update commit into remote server
+>git push origin feature/demo
+
+If commit many times it is hard for reviewing & tracking, so it is requested to merge all commit into one push:
+1. Check history commit log, example get 5 latest commits
+>git log -n 5
+
+Case 1: keep changes from commits for only one commit:
+2. Reset git branch: reset two commits to the commit before that two commits (--soft  mean return but does not delete these two commits, or keep changes from these two commits)
+>git reset --soft HEAD~2 
+
+3. Check git status will see the changes from these two commits apprear again:
+>git status
+
+4. Loop back to add these changes again:
+>git add .
+>git commit -m "feature/demo - Add git commands - Add sample python code"
+>git push -f origin feature/demo
+-f is for force update because we already post commits before, and now we want to replace these commits by new commits (override by the new commit)
+
+Case 2: do not keep changes from these commit
+2. return a git commit before
+>git stash 
+
+3. Check git status will see the changes from these two commits apprear again:
+>git status
+
+4. Loop back to add these changes again:
+>git add .
+>git commit -m "feature/demo - Add git commands - Add sample python code"
+>git push -f origin feature/demo
+-f is for force update because we already post commits before, and now we want to replace these commits by new commits (override by the new commit)
