@@ -153,7 +153,10 @@ def my_function(data, max, min):
 
 
 def my_function_xy(x, y):
-    return x.extend(y)
+    result = []
+    result.extend(x)
+    result.extend(y)
+    return result
 
 
 def my_function_min(n):

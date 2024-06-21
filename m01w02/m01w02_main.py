@@ -60,14 +60,15 @@ if __name__ == "__main__":
     print(util.my_function(max=max, min=min, data=my_list))
 
     print("Câu hỏi 7: ")
-    my_list = [5, 2, 5, 0, 1]
-    max = 1
-    min = 0
-    assert util.my_function(max=max, min=min, data=my_list) == [1, 1, 1, 0, 1]
-    my_list = [10, 2, 5, 0, 1]
-    max = 2
-    min = 1
-    print(util.my_function(max=max, min=min, data=my_list))
+    list_num1 = ['a', 2, 5]
+    list_num2 = [1, 1]
+    list_num3 = [0, 0]
+    assert util.my_function_xy(list_num1, util.my_function_xy(
+        list_num2, list_num3)) == ['a', 2, 5, 1, 1, 0, 0]
+    list_num1 = [1, 2]
+    list_num2 = [3, 4]
+    list_num3 = [0, 0]
+    print(util.my_function_xy(list_num1, util.my_function_xy(list_num2, list_num3)))
 
     print("Câu hỏi 8: ")
     my_list = [1, 22, 93, -100]
