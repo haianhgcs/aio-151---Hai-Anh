@@ -91,15 +91,14 @@ print("Question #1: ")
 data = torch.Tensor([1, 2, 3])
 softmax_function = nn.Softmax(dim=0)
 output = softmax_function(data)
-# print(float_equals(round(output[0].item(), 2), 0.09))
-assert round(output[0].item(), 2) == 0.09
+assert round(output[0].item(), 2) == round(0.09, 2)
 print(output)
 
 print("Question #2: ")
 softmax = Softmax()
 data = torch.Tensor([5, 2, 4])
 output = softmax(data)
-assert round(output[-1].item(), 2) == 0.26
+assert round(output[-1].item(), 2) == round(0.26,2)
 print(output)
 
 
@@ -107,14 +106,14 @@ print("Question #3: ")
 softmax = Softmax()
 data = torch.Tensor([1, 2, 300000000])
 output = softmax(data)
-assert round(output[0].item(), 2) == 0.0
+assert round(output[0].item(), 2) == round(0.00,2)
 print(output)
 
 print("Question #4: ")
 softmax_stable = SoftmaxStable()
 data = torch.tensor([1, 2, 3])
 output = softmax_stable(data)
-assert round(output[-1].item(), 2) == 0.67
+assert round(output[-1].item(), 2) == round(0.67,2)
 print(output)
 
 print("Question #5: ")
