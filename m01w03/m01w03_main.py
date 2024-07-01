@@ -8,7 +8,6 @@ from people.doctor import Doctor
 from ward import Ward
 from container.stack import MyStack
 from container.queue import MyQueue
-from util.utilities import float_equals
 
 print("1. Write class and implement `softmax` method.")
 softmax = Softmax()
@@ -98,7 +97,7 @@ print("Question #2: ")
 softmax = Softmax()
 data = torch.Tensor([5, 2, 4])
 output = softmax(data)
-assert round(output[-1].item(), 2) == round(0.26,2)
+assert round(output[-1].item(), 2) == round(0.26, 2)
 print(output)
 
 
@@ -106,14 +105,14 @@ print("Question #3: ")
 softmax = Softmax()
 data = torch.Tensor([1, 2, 300000000])
 output = softmax(data)
-assert round(output[0].item(), 2) == round(0.00,2)
+assert round(output[0].item(), 2) == round(0.00, 2)
 print(output)
 
 print("Question #4: ")
 softmax_stable = SoftmaxStable()
 data = torch.tensor([1, 2, 3])
 output = softmax_stable(data)
-assert round(output[-1].item(), 2) == round(0.67,2)
+assert round(output[-1].item(), 2) == round(0.67, 2)
 print(output)
 
 print("Question #5: ")
