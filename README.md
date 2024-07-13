@@ -9,6 +9,7 @@ My study to get familiar with AI/ML/Data Science
 >py -m venv env
 
 3. Activate the virtual environment
+>Set-ExecutionPolicy Unrestricted -Scope Process    # run this command if get error UnauthorizedAccess when activating
 >env\Scripts\activate
 
 4. Install packages defined in requirements.txt
@@ -16,3 +17,12 @@ My study to get familiar with AI/ML/Data Science
 
 5. Deactivate the virtual environment when finish
 >deactivate
+
+
+
+# OpenCV version
+* opencv-python            #only working with images
+* opencv-contrib-python    #support for working videos
+* opencv-python-headless   #non-GUI OpenCV
+
+Required Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
