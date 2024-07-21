@@ -25,3 +25,31 @@ càng lớn, mức độ làm mịn càng cao.Công thức tổng quát của Ga
 sau:
 
 $G(x,y) = \displaystyle \frac{1}{2 \pi \delta ^2}\cdot exp\left ( -\frac{x^2 + y^2}{2\delta ^2} \right )$
+
+# Gram matrix
+Trong lĩnh vực Style Transfer, Gram Matrix là một công cụ quan trọng để nắm bắt và đại
+diện cho phong cách của một hình ảnh. Gram Matrix được tính từ các đặc trưng (feature
+maps) của một mạng nơ-ron tích chập (Convolutional Neural Network - CNN).
+
+![alt text](./docs/styletransfer.PNG)
+
+**Cách tính Gram Matrix**
+
+Giả sử bạn có một tensor F đại diện cho các feature maps của một hình ảnh sau khi đi qua
+một lớp tích chập. Tensor này có kích thước (C, H, W), trong đó:
+* C là số lượng các kênh (channels).
+* H là chiều cao của feature map.
+* W là chiều rộng của feature map.
+Gram Matrix G có kích thước (C, C) và được tính bằng công thức:
+
+$G_{ij} = \displaystyle \sum_{k}^{}F_{ik}F_{jk}$
+
+trong đó $F_ik$ và $F_jk$ là các phần tử của tensor F tại kênh i và j, với k chạy qua tất cả các vị trí không gian (spatial locations).
+
+**Vai trò của Gram Matrix trong Style Transfer**
+
+Gram Matrix giúp nắm bắt mối quan hệ tương quan giữa các feature maps và đại diện cho
+cấu trúc tổng thể của hình ảnh, chẳng hạn như các mẫu và kết cấu, chứ không phải các chi
+tiết cục bộ. Trong Style Transfer, Gram Matrix của hình ảnh phong cách được so sánh với
+Gram Matrix của hình ảnh kết quả để đảm bảo rằng phong cách của hình ảnh gốc được
+chuyển sang hình ảnh mới.
