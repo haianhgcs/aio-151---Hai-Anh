@@ -7,13 +7,13 @@ if __name__ == "__main__":
 
     print("Câu #1: A")
     print("Câu #2: C")
-    # options = st.multiselect("Your favorite colors:", [
-    #                         "Green", "Yellow", "Red", "Blue"], ["Yellow", "Red"])
-    # st.write("You selected:", options)
+    options = st.multiselect("Your favorite colors:", [
+                             "Green", "Yellow", "Red", "Blue"], ["Yellow", "Red"])
+    st.write("You selected:", options)
 
     print("Câu #3: D")
     print("Câu #4: A")
-    # st.image(image_path, caption="A cat", width=100, channels="RGB")
+    st.image("aaa", caption="A cat", width=100, channels="RGB")
 
     print("Câu #5: A")
     print(ml_util.levenshtein_distance("elmets", "elements"))
