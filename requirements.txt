@@ -6,3 +6,5 @@ opencv-python
 hugchat
 pillow==10.3.0
 matplotlib
+seaborn
+scikit-learn
