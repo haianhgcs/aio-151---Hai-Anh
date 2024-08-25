@@ -44,7 +44,3 @@ def load_voca(file_path):
 
     words = sorted(set([line.strip().lower() for line in lines]))
     return words
-
-
-if __name__ == "__main__":
-    print("importable")

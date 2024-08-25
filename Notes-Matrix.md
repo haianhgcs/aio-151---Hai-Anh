@@ -45,6 +45,17 @@ với $I$ là ma trận đơn vị. Không phải mọi ma trận vuông đều 
 Định thức là một giá trị vô hướng có thể tính toán từ một ma trận vuông và cung cấp thông
 tin quan trọng về ma trận đó. Định thức của ma trận A được ký hiệu là det(A) hoặc |A|.
 
+## Nhân chéo 
+Nhân chéo (outer product) là một phép toán trong đại số tuyến tính được sử dụng để nhân hai vector (các mảng 1D) để tạo ra một ma trận. Nếu bạn có hai vector a và 𝑏,
+nhân chéo của chúng tạo ra một ma trận mà mỗi phần tử $𝐶_{i,j}$ là tích của phần tử thứ i của a và phần tử thứ j của 𝑏.
+
+Giả sử bạn có 2 vectors:
+* $a = [a_1, a_2, a_3]$
+* $b = [b_1, b_2, b_3, b_4]$
+
+Outer product của $a$ và $b$ có thể là:
+$C=a \otimes b$ với $C_{ij} = a_i \cdot b_j$
+
 # Ứng Dụng của Ma Trận trong AI
 Ma trận được sử dụng rộng rãi trong AI, đặc biệt là trong các lĩnh vực sau:
 ## Biểu Diễn Dữ Liệu

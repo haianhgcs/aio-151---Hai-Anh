@@ -49,9 +49,9 @@ trí của từ trong câu cho mô hình.
 ### Formula
 Với một từ tại vị trí pos trong câu và chiều của embedding vector là $d_{model}$, positional embedding được tính như sau:
 
-$PE_{(pos, 2i)} = sin\left ( \displaystyle \frac{pos}{10000^{\frac{2i}{d_{model}}}} \right )$&emsp;&emsp;&emsp;&emsp;&emsp; (3)
+$PE_{(pos, 2i)} = sin\left ( \displaystyle \frac{pos}{10000^{\displaystyle\frac{2i}{d_{model}}}} \right )$&emsp;&emsp;&emsp;&emsp;&emsp; (3)
 
-$PE_{(pos, 2i+1)} = cos\left ( \displaystyle \frac{pos}{10000^{\frac{2i}{d_{model}}}} \right )$&emsp;&emsp;&emsp;&emsp;&emsp; (4)
+$PE_{(pos, 2i+1)} = cos\left ( \displaystyle \frac{pos}{10000^{\displaystyle\frac{2i}{d_{model}}}} \right )$&emsp;&emsp;&emsp;&emsp;&emsp; (4)
 
 Trong đó:
 - *pos* là vị trí của từ trong câu (bắt đầu từ 0).
