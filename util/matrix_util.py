@@ -1,3 +1,4 @@
+import math
 import numpy as np
 
 
@@ -48,3 +49,39 @@ def compute_cosine_similarity(vector1, vector2):
     cosine_similarity_value = dot_product / (norm1 * norm2)
 
     return cosine_similarity_value
+
+
+class Solution:
+    def calculate_eigenvalues_eigenvectors(self, A):
+        def get_eigenvalues(matrix):
+            a, b, c, d = matrix[0][0], matrix[0][1], matrix[1][0], matrix[1][1]
+            trace = a + d
+            determinant = a * d - b * c
+            delta = trace**2 - 4 * determinant
+
+            if delta < 0:
+                raise ValueError("Eigenvalues are complex.")
+
+            sqrt_delta = math.sqrt(delta)
+            eigenvalue1 = (trace + sqrt_delta) / 2
+            eigenvalue2 = (trace - sqrt_delta) / 2
+
+            return eigenvalue1, eigenvalue2
+
+        def get_eigenvectors(matrix, eigenvalue):
+            a, b, c, d = matrix[0][0], matrix[0][1], matrix[1][0], matrix[1][1]
+            if eigenvalue == a:
+                x = -b
+                y = a - eigenvalue
+            else:
+                x = -c
+                y = d - eigenvalue
+
+            norm = math.sqrt(x**2 + y**2)
+            return [x / norm, y / norm]
+
+        eigenvalues = get_eigenvalues(A)
+        eigenvectors = [get_eigenvectors(A, eigenvalue)
+                        for eigenvalue in eigenvalues]
+
+        return {eigenvalues[0]: eigenvectors[0], eigenvalues[1]: eigenvectors[1]}
