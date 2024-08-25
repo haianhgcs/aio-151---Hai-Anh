@@ -2,6 +2,13 @@ import math
 import numpy as np
 
 
+def gram_matrix(tensor):
+    # tensor có shape (channels, height, width)
+    channels, height, width = tensor.shape
+    features = tensor.reshape(channels, height * width)
+    gram = np.einsum('ij,ik->jk', features, features)
+    return gram
+
 def inverse_matrix_2x2(matrix):
     return np.linalg.inv(matrix)
 
@@ -47,6 +54,7 @@ def compute_cosine_similarity(vector1, vector2):
 
     # Tính Cosine Similarity
     cosine_similarity_value = dot_product / (norm1 * norm2)
+
 
     return cosine_similarity_value
 
