@@ -35,7 +35,6 @@ def replace_background(bg1_image, bg2_image, ob_image):
 
     return output
 
-
 def change_brightness(img, delta):
     new_img = img.astype(np.float32) + delta
     new_img = np.clip(new_img, 0, 255)
