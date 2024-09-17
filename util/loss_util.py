@@ -1,5 +1,7 @@
 import math
 
+ERR_MSG_WRONG_LENGTH = "The length of y_true and y_pred must be the same."
+
 
 def mae_loss(y_true, y_pred):
     """
@@ -13,7 +15,7 @@ def mae_loss(y_true, y_pred):
     float: The MAE between the true and predicted values.
     """
     if len(y_true) != len(y_pred):
-        raise ValueError("The length of y_true and y_pred must be the same.")
+        raise ValueError(ERR_MSG_WRONG_LENGTH)
 
     absolute_errors = [abs(true - pred) for true, pred in zip(y_true, y_pred)]
     mae = sum(absolute_errors) / len(absolute_errors)
@@ -32,7 +34,7 @@ def mse_loss(y_true, y_pred):
     float: The MSE between the true and predicted values.
     """
     if len(y_true) != len(y_pred):
-        raise ValueError("The length of y_true and y_pred must be the same.")
+        raise ValueError(ERR_MSG_WRONG_LENGTH)
 
     squared_errors = [(true - pred) ** 2 for true, pred in zip(y_true, y_pred)]
     mse = sum(squared_errors) / len(squared_errors)
@@ -51,7 +53,7 @@ def rmse_loss(y_true, y_pred):
     float: The RMSE between the true and predicted values.
     """
     if len(y_true) != len(y_pred):
-        raise ValueError("The length of y_true and y_pred must be the same.")
+        raise ValueError(ERR_MSG_WRONG_LENGTH)
 
     squared_errors = [(true - pred) ** 2 for true, pred in zip(y_true, y_pred)]
     mse = sum(squared_errors) / len(squared_errors)
